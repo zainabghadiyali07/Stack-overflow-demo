@@ -1,0 +1,23 @@
+.postImage {
+    width: 100px;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: self-start;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+    background-color: #f0f2f5;
+}
+
+.darkBack {
+    background-color: #2e3847;
+}

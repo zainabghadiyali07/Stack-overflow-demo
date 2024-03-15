@@ -1,0 +1,68 @@
+.wrapper {
+  background-color: white;
+  padding: 25px;
+  border-radius: 11px;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 25vh;
+  position: relative;
+}
+
+.email {
+  height: 3rem;
+  width: 20rem;
+  background: #212121;
+  font-size: 1rem;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  border: 2px solid #c2c2c2;
+  border-radius: 2px;
+  margin-right: 4px;
+}
+
+.close:before {
+  transform: rotate(45deg);
+}
+
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.close:after,
+.close:before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 17px;
+  top: 3%;
+  right: 2%;
+  margin-top: -1px;
+  background: #7c7e8c;
+}
+
+.loginButton {
+  height: 2.3rem;
+  width: 20rem;
+  background-color: #146f0f;
+  color: white;
+  font-weight: 700;
+}
+
+.error {
+  color: red;
+  position: absolute;
+  top: -24px;
+}
+
+.createButton {
+  background-color: transparent;
+  border: none;
+  height: 2.3rem;
+  width: 20rem;
+}

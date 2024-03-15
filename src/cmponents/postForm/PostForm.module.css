@@ -1,0 +1,53 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  padding: 22px 50px;
+  border-radius: 6px;
+  min-height: 162px;
+}
+
+.des {
+  padding: 10px 0px 70px 20px;
+  text-align: revert-layer;
+  margin-top: 19px;
+  font-size: 16px;
+  border-radius: 11px;
+}
+
+.media {
+  margin-top: 10px;
+}
+
+.title {
+  height: 36px;
+  border: 1px solid;
+  font-size: 23px;
+  padding: 22px;
+  border-radius: 5px;
+}
+
+.buttonWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.cancel {
+  width: 100px;
+  height: 35px;
+  border-radius: 18px;
+  background-color: #d8d8d8;
+  border: none;
+}
+
+.post {
+  width: 100px;
+  height: 35px;
+  border-radius: 18px;
+  background-color: #13c500;
+  border: none;
+  color: white;
+}

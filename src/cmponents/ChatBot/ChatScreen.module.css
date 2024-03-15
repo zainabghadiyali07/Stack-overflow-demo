@@ -1,0 +1,15 @@
+.btn {
+  width: 53px;
+  border-radius: 29px;
+  border: none;
+}
+
+.btnWrapper {
+  position: fixed;
+  right: 6%;
+  bottom: 5%;
+  background-color: white;
+  padding: 14px;
+  border-radius: 50px;
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
+}

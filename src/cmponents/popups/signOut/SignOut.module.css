@@ -1,0 +1,41 @@
+.container {
+  background-color: #fff;
+  padding: 19px 55px 19px 55px;
+  border-radius: 7px;
+  height: 175px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  & span {
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: .19px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 86px;
+
+  & button {
+    width: 150px;
+    height: 45px;
+    border-radius: 50px;
+    border: none;
+    font-size: 14px;
+    color: white;
+    background-color: #f78633;
+    letter-spacing: .08px;
+    font-weight: 600;
+  }
+
+  .cancelButton {
+    background-color: white;
+    color: #f78633;
+  }
+}

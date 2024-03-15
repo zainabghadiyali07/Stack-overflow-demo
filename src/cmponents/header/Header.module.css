@@ -1,0 +1,43 @@
+.wrapper {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+  border-bottom: solid 1px #242424;
+  position: fixed;
+  background-color: white;
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.headerName {
+  font-size: 30px;
+  font-family: cursive;
+  font-weight: bold;
+}
+
+.buttonwapper {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+
+  & Button {
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+  }
+}
+
+.darkMode {
+  background-color: #5e4f4f !important;
+
+  span {
+    color: white !important;
+  }
+
+  button {
+    color: white;
+  }
+}
