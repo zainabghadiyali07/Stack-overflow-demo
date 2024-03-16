@@ -61,6 +61,7 @@ export default function Main() {
   const handleChatBotButton = () => {
     const pstInfo = {
       type: PopupType.CHAT_BOT,
+      user,
       close: ()=> setPopupInfo(null),
     }
     setPopupInfo(pstInfo);

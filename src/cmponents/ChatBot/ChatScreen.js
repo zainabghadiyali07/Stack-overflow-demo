@@ -1,17 +1,23 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styles from './ChatScreen.module.css';
 import cn from 'classnames';
 import OpenAI from "openai";
-import { OPEN_AI_KEY } from '../../utils/constants'
 
 const ChatScreen = ({popupInfo, messageslist, updateMessageList}) => {
   const [question, setQuestion] = useState('');
 
-  const { close } = popupInfo;
+  const { close, user } = popupInfo;
   
   const paragraphRef = useRef(null);
 
-  const openai = new OpenAI({apiKey: OPEN_AI_KEY, dangerouslyAllowBrowser: true});
+  useEffect(()=>{
+    if (!user?.uid) {
+      alert('Please Login First');
+      close();
+    }
+  },[close, user])
+
+  const openai = new OpenAI({apiKey: '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', dangerouslyAllowBrowser: true});
 
   const handleMessageList = async () => {
     const newMessage = {

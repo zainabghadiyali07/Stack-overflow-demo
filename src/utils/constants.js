@@ -7,8 +7,6 @@
     appId: "1:924069162138:web:7822dec898f0d07c4f4323",
     measurementId: "G-6M1JWDV32L"
   };
-
-  export const OPEN_AI_KEY = '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';
   
   export default firebaseConfig;
 
