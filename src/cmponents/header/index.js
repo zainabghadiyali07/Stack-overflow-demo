@@ -27,7 +27,7 @@ async function main() {
       <div className={styles.buttonwapper}>
         <button 
          className={styles.headerButton}
-         onClick={main}
+         onClick={handlePost}
          >
           Post
         </button>
