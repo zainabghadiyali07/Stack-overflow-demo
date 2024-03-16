@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { PopupType } from '../../utils/constants'
+import ChatScreen from '../ChatBot/ChatScreen'
 import PostForm from '../postForm'
 import styles from './PopupsContainer.module.css'
 import SignInPopUp from './signInPopUp'
@@ -8,8 +10,17 @@ const PopupsContainer = ({
   popupInfo,
 }) => {
 
+  const [messageslist, setMessageslist] = useState([]);
+
+  const updateMessageList = async (current, newMessage) => {
+    await setMessageslist([
+      ...current,
+      newMessage
+    ]);
+  }
+
   if (!popupInfo) {
-    return null;
+      return null;
   }
 
   const renderPopup = () => {
@@ -29,6 +40,15 @@ const PopupsContainer = ({
       case PopupType.POST_FORM: {
         return (
           <PostForm popupInfo={popupInfo} />
+        )
+      }
+      case PopupType.CHAT_BOT: {
+        return (
+          <ChatScreen 
+           popupInfo={popupInfo}
+           updateMessageList={updateMessageList}
+           messageslist={messageslist}
+           />
         )
       }
       default:

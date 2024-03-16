@@ -58,6 +58,14 @@ export default function Main() {
     setPopupInfo(pstInfo);
   }
 
+  const handleChatBotButton = () => {
+    const pstInfo = {
+      type: PopupType.CHAT_BOT,
+      close: ()=> setPopupInfo(null),
+    }
+    setPopupInfo(pstInfo);
+  }
+
   return (
     <>
       <Loader isLoading={isLoading} />
@@ -68,7 +76,6 @@ export default function Main() {
         handlePost={handlePost}
       />
       <NewsFeed allPosts={allPosts} />
-      <ChatBotButton />
-
+      <ChatBotButton onClick={handleChatBotButton}/>
     </>)
 }

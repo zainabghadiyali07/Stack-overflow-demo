@@ -8,7 +8,7 @@
     measurementId: "G-6M1JWDV32L"
   };
 
-  export const OPEN_AI_KEY = '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';
+  export const OPEN_AI_KEY = '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';
   
   export default firebaseConfig;
 
@@ -18,4 +18,5 @@
     SIGN_IN: 'signin',
     SIGN_OUT: 'signout',
     POST_FORM: 'postform',
+    CHAT_BOT: 'chatbot'
   }
