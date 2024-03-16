@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Stack-overflow-demo/static/css/main.c36642cc.css",
+    "main.js": "/Stack-overflow-demo/static/js/main.6d8ba77c.js",
+    "static/js/787.fa33857c.chunk.js": "/Stack-overflow-demo/static/js/787.fa33857c.chunk.js",
+    "static/media/chatbot.png": "/Stack-overflow-demo/static/media/chatbot.ddd7504365015ebb3cdc.png",
+    "index.html": "/Stack-overflow-demo/index.html",
+    "main.c36642cc.css.map": "/Stack-overflow-demo/static/css/main.c36642cc.css.map",
+    "main.6d8ba77c.js.map": "/Stack-overflow-demo/static/js/main.6d8ba77c.js.map",
+    "787.fa33857c.chunk.js.map": "/Stack-overflow-demo/static/js/787.fa33857c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c36642cc.css",
+    "static/js/main.6d8ba77c.js"
+  ]
+}
