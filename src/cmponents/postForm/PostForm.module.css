@@ -51,3 +51,9 @@
   border: none;
   color: white;
 }
+
+@media (max-width: 500px) {
+  .wrapper {
+    width: 90vw;
+  }
+}

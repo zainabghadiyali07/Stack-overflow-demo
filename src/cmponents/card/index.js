@@ -1,4 +1,5 @@
 import { formatDateForPost, isDay } from '../../utils/dateHandler';
+import UserIcon from '../../assets/man.png';
 import cn from 'classnames';
 import styles from './Card.module.css';
 
@@ -10,7 +11,7 @@ const Card = ({ post }) => {
     })}>
       <div className={styles.cardFooter}>
         <div className={styles.user}>
-          <img src="https://i.pravatar.cc/40?img=1" alt="user__image" className={styles.userImage} />
+          <img src={UserIcon} alt="user__image" className={styles.userImage} />
           <div className={styles.userInfo}>
             <h5>{post.displayName}</h5>
             <small>{formatDateForPost(post.createdDate)}</small>
