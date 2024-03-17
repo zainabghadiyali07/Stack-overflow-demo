@@ -18,6 +18,7 @@ const ChatScreen = ({popupInfo, messageslist, updateMessageList}) => {
   },[close, user])
 
   const apiKey = process.env.OPEN_AI_KEY || 'abc'
+  console.log('===', process.env, apiKey)
   const openai = new OpenAI({apiKey, dangerouslyAllowBrowser: true});
 
   const handleMessageList = async () => {
