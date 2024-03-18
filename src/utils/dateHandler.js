@@ -59,5 +59,32 @@ export const formatDateForPost = (date) => {
   export const isDay = () => {
     const currentDate = new Date();
 
-    return currentDate.getHours() > 18;
+    const hour = currentDate.getHours()
+
+    return ( hour > 17) || (hour < 7 );
   }
+
+  const comparator = (a, b) => {
+    if (b['createdDate'].toLowerCase() < a["createdDate"].toLowerCase()) {
+      return -1;
+    }
+  
+    if (b["createdDate"].toLowerCase() > a["createdDate"].toLowerCase()) {
+      return 1;
+    }
+  
+    return 0;
+  }
+
+  export const applySortFilterForList = ({
+    listData,
+  }) => listData && listData
+    .map((el, index) => ({ el, index })) // reworking item's structure
+    .sort((a, b) => {
+      const order = this.comparator(a.el, b.el);
+  
+      if (order !== 0) return order;
+  
+      return a.index - b.index;
+    }) // applying sort
+    .map((item) => item.el);

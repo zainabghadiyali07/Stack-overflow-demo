@@ -31,6 +31,7 @@ const db = getDatabase(app);
 export const useFireBase = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [allPosts, setAllPosts] = useState([]);
+  const [secrets, setSecrets] = useState({});
   const [user, setUser] = useState({});
 
   const storage = getStorage();
@@ -148,6 +149,9 @@ export const useFireBase = () => {
     await get(child(dbread, `usersPosts/${uid}`)).then((snapshot) => {
       if (snapshot.exists()) {
         if (snapshot.val()) {
+          if (snapshot.val().Secrets) {
+            setSecrets(snapshot.val().Secrets);
+          }
           Object.keys(snapshot.val()).map(key =>
             Object.keys(snapshot.val()[key]).map((keys =>
               posts.push(snapshot.val()[key][keys]))));
@@ -177,6 +181,7 @@ export const useFireBase = () => {
     user,
     isLoading,
     allPosts,
+    secrets,
     signIn,
     signUp,
     writeNewPost,

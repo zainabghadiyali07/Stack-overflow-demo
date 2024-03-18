@@ -14,6 +14,7 @@ export default function Main() {
     user,
     isLoading,
     allPosts,
+    secrets,
     signIn,
     signUp,
     writeNewPost,
@@ -61,6 +62,7 @@ export default function Main() {
   const handleChatBotButton = () => {
     const pstInfo = {
       type: PopupType.CHAT_BOT,
+      secrets,
       user,
       close: ()=> setPopupInfo(null),
     }

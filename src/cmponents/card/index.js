@@ -5,6 +5,10 @@ import styles from './Card.module.css';
 
 const Card = ({ post }) => {
 
+  if (!post?.displayName) {
+    return null;
+  }
+
   return (
     <div className={cn(styles.card, {
       [styles.darkMode]: isDay(),

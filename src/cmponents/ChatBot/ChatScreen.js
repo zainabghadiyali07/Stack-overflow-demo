@@ -6,7 +6,7 @@ import OpenAI from "openai";
 const ChatScreen = ({popupInfo, messageslist, updateMessageList}) => {
   const [question, setQuestion] = useState('');
 
-  const { close, user } = popupInfo;
+  const { close, user, secrets } = popupInfo;
   
   const paragraphRef = useRef(null);
 
@@ -17,9 +17,7 @@ const ChatScreen = ({popupInfo, messageslist, updateMessageList}) => {
     }
   },[close, user])
 
-  const apiKey = process.env.OPEN_AI_KEY || 'abc'
-  console.log('===', process.env, apiKey)
-  const openai = new OpenAI({apiKey, dangerouslyAllowBrowser: true});
+  const openai = new OpenAI({apiKey:  secrets?.Open_AI_KEY, dangerouslyAllowBrowser: true});
 
   const handleMessageList = async () => {
     const newMessage = {
@@ -27,18 +25,17 @@ const ChatScreen = ({popupInfo, messageslist, updateMessageList}) => {
       role: 'system'
     }
     
-    await updateMessageList(messageslist, newMessage)
-    paragraphRef.current.scrollTop = paragraphRef.current.scrollHeight;
+    await updateMessageList(newMessage)
 
      await openai.chat.completions.create({
       messages: [{ role: "system", content: question }],
       model: "gpt-3.5-turbo",
     }).then(async (content)=>{
-      
-     await updateMessageList(messageslist, content.choices[0].message)
+     updateMessageList(content.choices[0].message)
     });
 
     setQuestion('');
+    paragraphRef.current.scrollTop = paragraphRef.current.scrollHeight;
   }
 
   return (
