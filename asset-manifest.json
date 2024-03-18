@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Stack-overflow-demo/static/css/main.fabb31f8.css",
-    "main.js": "/Stack-overflow-demo/static/js/main.fc9f9cd2.js",
+    "main.js": "/Stack-overflow-demo/static/js/main.a7157e75.js",
     "static/js/787.fa33857c.chunk.js": "/Stack-overflow-demo/static/js/787.fa33857c.chunk.js",
     "static/media/chatbot.png": "/Stack-overflow-demo/static/media/chatbot.ddd7504365015ebb3cdc.png",
     "static/media/man.png": "/Stack-overflow-demo/static/media/man.28ec5b21f8dfee4198ff.png",
     "index.html": "/Stack-overflow-demo/index.html",
     "main.fabb31f8.css.map": "/Stack-overflow-demo/static/css/main.fabb31f8.css.map",
-    "main.fc9f9cd2.js.map": "/Stack-overflow-demo/static/js/main.fc9f9cd2.js.map",
+    "main.a7157e75.js.map": "/Stack-overflow-demo/static/js/main.a7157e75.js.map",
     "787.fa33857c.chunk.js.map": "/Stack-overflow-demo/static/js/787.fa33857c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fabb31f8.css",
-    "static/js/main.fc9f9cd2.js"
+    "static/js/main.a7157e75.js"
   ]
 }
