@@ -1,15 +1,18 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './ChatScreen.module.css';
 import cn from 'classnames';
-import OpenAI from "openai";
+import { GoogleGenerativeAI } from '@google/generative-ai'
 
 const ChatScreen = ({popupInfo, messageslist, updateMessageList}) => {
   const [question, setQuestion] = useState('');
-
   const { close, user, secrets } = popupInfo;
+  const genAI = new GoogleGenerativeAI(secrets.Open_AI_KEY);
+
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
   
   const paragraphRef = useRef(null);
 
+  console.log(secrets)
   useEffect(()=>{
     if (!user?.uid) {
       alert('Please Login First');
@@ -17,7 +20,19 @@ const ChatScreen = ({popupInfo, messageslist, updateMessageList}) => {
     }
   },[close, user])
 
-  const openai = new OpenAI({apiKey:  secrets?.Open_AI_KEY, dangerouslyAllowBrowser: true});
+  async function run(prompt) {
+  
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    const newMessage = {
+      content: text,
+      role: 'assistant'
+    }
+    
+    await updateMessageList(newMessage)
+  }
+  
 
   const handleMessageList = async () => {
     const newMessage = {
@@ -27,12 +42,7 @@ const ChatScreen = ({popupInfo, messageslist, updateMessageList}) => {
     
     await updateMessageList(newMessage)
 
-     await openai.chat.completions.create({
-      messages: [{ role: "system", content: question }],
-      model: "gpt-3.5-turbo",
-    }).then(async (content)=>{
-     updateMessageList(content.choices[0].message)
-    });
+    run(question);
 
     setQuestion('');
     paragraphRef.current.scrollTop = paragraphRef.current.scrollHeight;
