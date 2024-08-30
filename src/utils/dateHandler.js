@@ -64,7 +64,7 @@ export const formatDateForPost = (date) => {
     return ( hour > 17) || (hour < 7 );
   }
 
-  const comparator = (a, b) => {
+ export const comparator = (a, b) => {
     if (b['createdDate'].toLowerCase() < a["createdDate"].toLowerCase()) {
       return -1;
     }
