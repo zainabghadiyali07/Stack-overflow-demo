@@ -24,8 +24,10 @@ export default function Main() {
   } = useFireBase();
 
   useEffect(() => {
-    getAllPost()
-  }, []);
+    if (!user){
+      getAllPost();
+    }
+  }, [getAllPost, user]);
 
   const handleSignINButton = () => {
     if (user?.uid) {

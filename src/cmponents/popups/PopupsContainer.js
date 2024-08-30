@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { PopupType } from '../../utils/constants'
 import ChatScreen from '../ChatBot/ChatScreen'
 import PostForm from '../postForm'
@@ -14,7 +14,7 @@ const PopupsContainer = ({
   
   const updateMessageList = async (newMessage) => {
 
-    await setMessageslist([
+     setMessageslist([
       ...messageslist,
       newMessage
     ]);
